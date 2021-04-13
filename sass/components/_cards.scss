@@ -1,0 +1,82 @@
+@use '../abstract/variables';
+.cards {
+    &__container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        padding: 8rem 16rem;
+        background-color: variables.$neutral-grayish-blue;
+
+        grid-gap: 3rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    &__element {
+        padding: 3.4rem;
+        // background-color: variables.$primary-dark-grayish;
+        border-radius: 1rem;
+
+        &-info {
+            display: flex;
+        }
+
+        &-photo {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
+
+        &-name {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: variables.$primary-light;
+        }
+
+        &-verified {
+            color: rgba(variables.$primary-light, 0.5);
+        }
+
+        &-main {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: variables.$primary-light;
+        }
+
+        &-content {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: variables.$neutral-light;
+        }
+    }
+
+    &__element--1 {
+        background-color: variables.$primary-moderate;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    &__element--2 {
+        background-color: variables.$primary-dark-grayish;
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    &__element--3 {
+        background-color: variables.$primary-light;
+        grid-column: 4 / span 1;
+        grid-row: 1 / span 2;
+    }
+
+    &__element--4 {
+        background-color: variables.$primary-light;
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+
+    &__element--5 {
+        background-color: variables.$primary-dark-blackish;
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+    }
+}

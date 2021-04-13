@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.cards__container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  padding: 8rem 16rem;
+  background-color: #ecf2f8;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.cards__element {
+  padding: 3.4rem;
+  border-radius: 1rem;
+}
+.cards__element-info {
+  display: flex;
+}
+.cards__element-photo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.cards__element-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+}
+.cards__element-verified {
+  color: rgba(255, 255, 255, 0.5);
+}
+.cards__element-main {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: white;
+}
+.cards__element-content {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #cfcfcf;
+}
+.cards__element--1 {
+  background-color: #7541c8;
+  grid-column: 1/span 2;
+  grid-row: 1/span 1;
+}
+.cards__element--2 {
+  background-color: #48556a;
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+}
+.cards__element--3 {
+  background-color: white;
+  grid-column: 4/span 1;
+  grid-row: 1/span 2;
+}
+.cards__element--4 {
+  background-color: white;
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+}
+.cards__element--5 {
+  background-color: #19212e;
+  grid-column: 2/span 2;
+  grid-row: 2/span 1;
+}
+
+/*# sourceMappingURL=style.css.map */
