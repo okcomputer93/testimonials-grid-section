@@ -1,4 +1,6 @@
 @use '../abstract/typography';
+@use '../abstract/variables';
+
 *,
 *::before,
 *::after {
@@ -10,6 +12,18 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    @media only screen and (max-width: variables.$bp-large) {
+        font-size: 52%;
+    }
+
+    @media only screen and (max-width: variables.$bp-medium) {
+        // font-size: 37.5%;
+    }
+
+    @media only screen and (max-width: variables.$bp-small) {
+        // font-size: 31.25%;
+    }
 }
 
 body {

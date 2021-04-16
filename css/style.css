@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 *,
 *::before,
@@ -11,77 +12,190 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-
+@media only screen and (max-width: 81.25em) {
+  html {
+    font-size: 52%;
+  }
+}
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
 }
 
-.cards__container {
+.cards {
   width: 100%;
   height: 100%;
+}
+.cards__container {
+  max-width: 1600px;
   display: grid;
-  padding: 8rem 16rem;
+  padding: 4.2rem 7rem;
+  margin: 0 auto;
   background-color: #ecf2f8;
   grid-gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "element-1 element-1 element-2 element-3" "element-4 element-5 element-5 element-3";
+}
+@media only screen and (max-width: 81.25em) {
+  .cards__container {
+    grid-template-areas: "element-1 element-1 element-2 element-2" "element-1 element-1 element-4 element-4" "element-3 element-3 element-5 element-5";
+  }
+}
+@media only screen and (max-width: 62.5em) {
+  .cards__container {
+    grid-template-areas: "element-1 element-1 element-2 element-2" "element-1 element-1 element-4 element-4" "element-5 element-5 element-5 element-5" "element-3 element-3 element-3 element-3";
+  }
+}
+@media only screen and (max-width: 50em) {
+  .cards__container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-areas: "element-1" "element-2" "element-4" "element-5" "element-3";
+  }
+}
+@media only screen and (max-width: 25em) {
+  .cards__container {
+    padding: 7rem 2.5rem;
+  }
 }
 .cards__element {
   padding: 3.4rem;
   border-radius: 1rem;
+  display: grid;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 25em) {
+  .cards__element {
+    padding: 4rem;
+  }
 }
 .cards__element-info {
-  display: flex;
+  display: grid;
+  padding-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(4.5rem, max-content));
+  grid-template-rows: repeat(2, 1fr);
+}
+@media only screen and (max-width: 25em) {
+  .cards__element-info {
+    grid-template-columns: repeat(auto-fit, minmax(6rem, max-content));
+  }
 }
 .cards__element-photo {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+  align-self: center;
+  grid-column: 1/span 1;
+  grid-row: 1/span 2;
+  border: 2px solid #ae90df;
+}
+@media only screen and (max-width: 25em) {
+  .cards__element-photo {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 .cards__element-name {
   font-size: 1.3rem;
   font-weight: 500;
-  color: white;
+  color: currentColor;
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  align-self: end;
+}
+@media only screen and (max-width: 25em) {
+  .cards__element-name {
+    font-size: 1.5rem;
+  }
 }
 .cards__element-verified {
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  align-self: start;
   color: rgba(255, 255, 255, 0.5);
 }
+@media only screen and (max-width: 25em) {
+  .cards__element-verified {
+    font-size: 1.4rem;
+  }
+}
 .cards__element-main {
-  font-size: 2.3rem;
+  font-size: 2.41rem;
   font-weight: 700;
-  color: white;
+  color: currentColor;
+  padding-bottom: 2rem;
+}
+@media only screen and (max-width: 25em) {
+  .cards__element-main {
+    line-height: normal;
+    font-size: 2.22rem;
+  }
 }
 .cards__element-content {
   font-size: 1.5rem;
   font-weight: 500;
   color: #cfcfcf;
+  line-height: 2.3rem;
+}
+@media only screen and (max-width: 25em) {
+  .cards__element-content {
+    line-height: normal;
+    font-size: 1.52rem;
+  }
 }
 .cards__element--1 {
+  color: white;
   background-color: #7541c8;
-  grid-column: 1/span 2;
-  grid-row: 1/span 1;
+  grid-area: element-1;
+  position: relative;
+}
+.cards__element--1::after {
+  content: "“";
+  font-family: sans-serif;
+  font-size: 52rem;
+  position: absolute;
+  top: -12rem;
+  right: 6.5rem;
+  color: rgba(232, 223, 246, 0.5);
+}
+@media only screen and (max-width: 50em) {
+  .cards__element--1::after {
+    right: 0.5rem;
+  }
 }
 .cards__element--2 {
+  color: white;
   background-color: #48556a;
-  grid-column: 3/span 1;
-  grid-row: 1/span 1;
+  grid-area: element-2;
 }
 .cards__element--3 {
+  color: #48556a;
   background-color: white;
-  grid-column: 4/span 1;
-  grid-row: 1/span 2;
+  grid-area: element-3;
+}
+.cards__element--3 .cards__element-verified {
+  color: rgba(72, 85, 106, 0.5);
+}
+.cards__element--3 .cards__element-content {
+  color: rgba(72, 85, 106, 0.7);
 }
 .cards__element--4 {
+  color: #48556a;
   background-color: white;
-  grid-column: 1/span 1;
-  grid-row: 2/span 1;
+  grid-area: element-4;
+}
+.cards__element--4 .cards__element-verified {
+  color: rgba(72, 85, 106, 0.5);
+}
+.cards__element--4 .cards__element-content {
+  color: rgba(72, 85, 106, 0.7);
 }
 .cards__element--5 {
+  color: white;
   background-color: #19212e;
-  grid-column: 2/span 2;
-  grid-row: 2/span 1;
+  grid-area: element-5;
 }
 
 /*# sourceMappingURL=style.css.map */
